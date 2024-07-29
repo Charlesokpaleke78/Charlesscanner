@@ -1,9 +1,9 @@
 {
-    "name": "Topu Pairing",
-    "description": "FLASH-MD WA bot, Created by France King",
-    "logo": "https://telegra.ph/file/8dace2d24b82568c29e19.jpg",
+    "name": "Ghost Pairing",
+    "description": "GHOST-MD WA bot, Created by Charles",
+    "logo": "https://telegra.ph/file/eb8fd1b4b58016596392a.jpg",
     "repository": "https://github.com/toputech/Flash-Md-Session11/tree/main",
-    "keywords": ["FlashMd"],
+    "keywords": ["Ghostmd"],
     "success_url": "/", 
     "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
     "env": {      
