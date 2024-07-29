@@ -8,7 +8,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-	default: France_King,
+	default: Charles,
 	useMultiFileAuthState,
 	jidNormalizedUser,
 	Browsers,
@@ -28,13 +28,13 @@ const {
 } = require("node:fs/promises")
 router.get('/', async (req, res) => {
 	const id = makeid();
-	async function FLASH_MD_QR_CODE() {
+	async function GHOST_MD_QR_CODE() {
 		const {
 			state,
 			saveCreds
 		} = await useMultiFileAuthState('./temp/' + id)
 		try {
-			let Qr_Code_By_France_King = France_King({
+			let Qr_Code_By_Charles = Charles({
 				auth: state,
 				printQRInTerminal: false,
 				logger: pino({
@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
 				browser: Browsers.macOS("Desktop"),
 			});
 
-			Qr_Code_By_France_King.ev.on('creds.update', saveCreds)
-			Qr_Code_By_France_Kingr.ev.on("connection.update", async (s) => {
+			Qr_Code_By_Charles.ev.on('creds.update', saveCreds)
+			Qr_Code_By_Charles.ev.on("connection.update", async (s) => {
 				const {
 					connection,
 					lastDisconnect,
@@ -56,43 +56,43 @@ router.get('/', async (req, res) => {
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
 					await delay(800);
 				   let b64data = Buffer.from(data).toString('base64');
-				   let session = await Qr_Code_By_France_King.sendMessage(Qr_Code_By_France_King.user.id, { text: 'TOPU;;;' + b64data });
+				   let session = await Qr_Code_By_Charles.sendMessage(Qr_Code_By_France_King.user.id, { text: 'TOPU;;;' + b64data });
 	
-				   let FLASH_MD_TEXT = `
-*𝕰𝖊𝖊𝖞... 𝖙𝖔𝖕𝖚 𝖉𝖒𝖍 𝖍𝖆𝖘 𝖏𝖚𝖘𝖙 𝖈𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉 𝖙𝖍𝖊 𝖘𝖊𝖘𝖘𝖎𝖔𝖓 𝖎𝖉*
-*Wow you choosen TOPU-MD complete the deployment and enyoy the speed*
+				   let GHOST_MD_TEXT = `
+*𝕰𝖊𝖊𝖞... GHOST MD 𝖍𝖆𝖘 𝖏𝖚𝖘𝖙 𝖈𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉 𝖙𝖍𝖊 𝖘𝖊𝖘𝖘𝖎𝖔𝖓 𝖎𝖉*
+*Wow you choosen GHOST-MD complete the deployment and enyoy the speed*
 ____________________________________
 ╔════◇
-║『 *TOPU AI IS READY TO DEPLOY』
+║『 *GHOST MD IS READY TO DEPLOY』
 ║ YOUR SESSION IS READY. COPY IT  
 ║ AND HOST IT ON YOUR WEB.
 ╚════════════════════╝
 ╔═════◇
 ║ 『••• OWNER INFO •••』
 
-║ ❒ 𝐎wner: _https://wa.me/message/5WRTCPHFKUGFM1_
+║ ❒ 𝐎wner: _https://wa.me/2348033282342_
 
 ║ ❒ 𝐑𝐞𝐩𝐨: _https://github.com/Toputech/Topu-ai_
 
-║ ❒ 𝐖𝐚𝐆𝐫𝐨𝐮𝐩: _https://chat.whatsapp.com/BxelCdrHnDYBNfMy2jafgI_
+║ ❒ 𝐖𝐚𝐆𝐫𝐨𝐮𝐩: _https://chat.whatsapp.com/DolMGDAhrYa6iWnwaCfcSv_
 
-║ ❒ 𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VaeRrcnADTOKzivM0S1r_
+║ ❒ 𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VaYYdDj8KMqtKBq8M20G_
 ║ 
 ╚════════════════════╝ 
- *©TOPU TECH*
+ *©CHARLES TECH*
 ___________________________________
 
 _Don't Forget To Give Star To My Repo_`
-	 await Qr_Code_By_France_King.sendMessage(Qr_Code_By_France_King.user.id,{text:FLASH_MD_TEXT},{quoted:session})
+	 await Qr_Code_By_Charles.sendMessage(Qr_Code_By_Charles.user.id,{text:GHOST_MD_TEXT},{quoted:session})
 
 
 
 					await delay(100);
-					await Qr_Code_By_France_King.ws.close();
+					await Qr_Code_By_Charles.ws.close();
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					FLASH_MD_QR_CODE();
+					GHOST_MD_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -105,6 +105,6 @@ _Don't Forget To Give Star To My Repo_`
 			await removeFile("temp/" + id);
 		}
 	}
-	return await FLASH_MD_QR_CODE()
+	return await GHOST_MD_QR_CODE()
 });
 module.exports = router
