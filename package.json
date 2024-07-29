@@ -1,14 +1,14 @@
 {
-    "description": "topu-sessions",
-    "main": "./toputech.js",
+    "description": "ghost-sessions",
+    "main": "./charlestech.js",
   "engines" : { 
     "npm" : ">=9.7.2",
     "node" : ">=20.0.0"
     },
     "scripts": {
-    "start": "node toputech.js"
+    "start": "node charlestech.js"
   },
-  "author": "Topu Tech",
+  "author": "Charles Tech",
   "license": "GPL-3.0 license",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.5.0",
