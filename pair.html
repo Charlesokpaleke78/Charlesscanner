@@ -142,12 +142,12 @@
         <div id="text">
           <i class="fa fa-user"></i>
           <p>
-            <h3 class="centered-text"> TOPU MD SESSION SCANNER</h3>
+            <h3 class="centered-text"> GHOST MD SESSION SCANNER</h3>
             <br>
-            <h6>𝚳𝚫𝐃𝚵 𝚩𝐘 𝚻𝚯𝚸𝐔 𝚻𝚵𝐂𝚮.</h6>
+            <h6>𝞛𝞓𝘿𝞢 𝞑𝙔 𝘾𝞖𝞓𝞒𝙇𝞢𝙎 𝙏𝞢𝘾𝞖.</h6>
             <h6>Enter Your Number with Country Code.</h6>
             <div class="input-container">
-              <input placeholder="255673xxxx" type="number" id="number" placeholder="Enter your Phone Pumber with Cuntry Code" name="">
+              <input placeholder="23480332×××××" type="number" id="number" placeholder="Enter your Phone Pumber with Cuntry Code" name="">
               <button id="submit">Submit</button>
             </div>
             
@@ -188,10 +188,10 @@
       } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
         a.innerHTML = '<a style="color:red;font-weight:bold">Invalid Phone Number</a><br><br>';
       } else {
-        const France_King = c.value.replace(/[^0-9]/g, "");
+        const Charles = c.value.replace(/[^0-9]/g, "");
         let bb = "";
         let bbc = "";
-        const cc = France_King.split('');
+        const cc = Charles.split('');
         cc.map(a => {
           bbc += a;
           if (bbc.length == 3) {
@@ -206,7 +206,7 @@
         c.value = "+" + bb;
         c.style = "color:red;font-size:20px";
         a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a><br><br>';
-        let { data } = await axios(`/code?number=${France_King}`);
+        let { data } = await axios(`/code?number=${Charles}`);
         let code = data.code || "Service Unavailable";
         a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
       }
