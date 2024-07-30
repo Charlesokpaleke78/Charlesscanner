@@ -1,12 +1,12 @@
 {
     "description": "ghost-sessions",
-    "main": "./charlestech.js",
+    "main": "./toputech.js",
   "engines" : { 
     "npm" : ">=9.7.2",
     "node" : ">=20.0.0"
     },
     "scripts": {
-    "start": "node charlestech.js"
+    "start": "node toputech.js"
   },
   "author": "Charles Tech",
   "license": "GPL-3.0 license",
